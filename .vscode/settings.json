@@ -1,0 +1,10 @@
+{
+  "triggerTaskOnSave.on": true,
+  "triggerTaskOnSave.showBusyIndicator": true,
+  "triggerTaskOnSave.tasks": {
+    "runOnSave": [
+        {
+        }
+    ]
+  },
+}

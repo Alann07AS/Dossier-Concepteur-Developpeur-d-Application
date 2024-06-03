@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "convertMD",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/UpdateMDtoHTML.sh"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
