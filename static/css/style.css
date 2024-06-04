@@ -220,7 +220,6 @@ a {
 }
 
 #list {
-    position: absolute;
     top: 100vh;
     /* transform: translateY(-50%); */
     display: flex;
@@ -237,10 +236,9 @@ body {
     grid-template-rows: 100vh 100vh;
     gap: 0px 0px;
 
-    /* justify-content: center; 
-    align-content: center; 
+    justify-content: center; 
     justify-items: center; 
-    align-items: center;  */
+    align-items: center; 
 }
 
 #md {
