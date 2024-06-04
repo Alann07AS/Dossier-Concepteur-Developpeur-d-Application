@@ -30,3 +30,7 @@ htmlFiles.forEach(f=>{
     }
     list.appendChild(el)
 })
+
+const mode = document.getElementById("mode")
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {mode.classList.add("dark")}
+mode.onclick = ()=>mode.classList.toggle("dark")
