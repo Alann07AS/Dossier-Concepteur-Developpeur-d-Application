@@ -1,10 +1,23 @@
-body,
-html {
+html,
+body {
+    position: relative;
+    left: 0;
+    top: 0;
     margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(246, 246, 246);
     color: #000;
     font-size: large;
+    overflow:auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 a {
@@ -15,30 +28,43 @@ a {
     background-color: white;
     border-radius: 12px;
     padding: 8px;
+    box-shadow: -9px 7px 15px rgb(227, 227, 227);
+}
+
+.bg {
+    background-image: url("../img/bg.jpg");
+    background-size: 140vh;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.162);
 }
 
 .header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 1fr;
+    grid-template-rows: 0.3fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
         "title title folders"
         "cards cards name";
-    min-height: 100px;
+    /* min-height: 100px; */
     max-height: 100vh;
     justify-content: center;
     align-content: center;
     justify-items: center;
     align-items: center;
-    margin: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding: 21px;
+    border-radius: 24px;
+    margin: 14px;
 }
 
 @media (max-width: 700px) {
     .header {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 0.4fr 0.4fr 1fr;
         grid-template-areas:
             "title title"
             "folders name"
@@ -143,4 +169,30 @@ a {
 
 .s_name {
     grid-area: s_name;
+}
+
+.file {
+    margin: 4px;
+    text-align: center;
+    width: fit-content;
+    transition: 0.4s;
+}
+
+.file:hover {
+    transform: scale(1.1);
+}
+
+#list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    border-radius: 18px;
+    margin: 14px;
+}
+
+
+#md {
+    width: 98vw;
+    border-radius: 3px;
 }
