@@ -16,7 +16,7 @@ function loadHTMLContent(file, el, anchor = true) {
             el.innerHTML = xhr.responseText;
             if (window.location.href.includes("github")) {
                 document.body.querySelectorAll('img')
-                .forEach(i => i.src = window.location.pathname + i.src.replace(window.location.origin, ''))
+                .forEach(i => i.src = window.location.pathname.slice(0, -1) + i.src.replace(window.location.origin, ''))
             }
             if (anchor) window.location.href = "#" + el.id
         }
