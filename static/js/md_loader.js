@@ -14,6 +14,7 @@ function loadHTMLContent(file, el, anchor = true) {
             // Insert the HTML content into the body
             el.classList.toggle("markdown-body", true)
             el.innerHTML = xhr.responseText;
+            el.querySelectorAll('a').forEach(a => a.target = "_blank")
             if (window.location.href.includes("github")) {
                 el.querySelectorAll('img')
                 .forEach(i => i.src = window.location.pathname.slice(0, -1) + i.src.replace(window.location.origin, ''))

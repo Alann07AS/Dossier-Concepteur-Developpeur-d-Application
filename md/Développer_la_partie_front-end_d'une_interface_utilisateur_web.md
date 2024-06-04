@@ -1,6 +1,6 @@
-### Développer la partie front-end d'une interface utilisateur web.
+### Développer la partie front-end d'une interface utilisateur web.
 
-#### Social Network
+#### Social Network
 
 La partie Vue du projet a été ecrite en Réact par mes colégues.
 
