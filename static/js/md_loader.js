@@ -14,7 +14,7 @@ function loadHTMLContent(file, el, anchor = true) {
             // Insert the HTML content into the body
             el.classList.toggle("markdown-body", true)
             el.innerHTML = xhr.responseText;
-            if (window.location.reload.toString().includes("github")) {
+            if (window.location.href.includes("github")) {
                 document.body.querySelectorAll('img')
                 .forEach(i => i.src += window.location.pathname)
             }
