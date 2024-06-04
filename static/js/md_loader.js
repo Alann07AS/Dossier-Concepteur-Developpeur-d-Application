@@ -1,9 +1,9 @@
 // Function to load HTML content into the body
-function loadHTMLContent(file, el, anchor=true) {
+function loadHTMLContent(file, el, anchor = true) {
     if (!file || !el) return
     // Create a new XMLHttpRequest object
     var xhr = new XMLHttpRequest();
-        // Configure it: GET-request for the URL /static/mdHTML/filename.html
+    // Configure it: GET-request for the URL /static/mdHTML/filename.html
 
     xhr.open('GET', window.location.pathname + 'static/mdHTML/' + file, true);
 
@@ -14,7 +14,11 @@ function loadHTMLContent(file, el, anchor=true) {
             // Insert the HTML content into the body
             el.classList.toggle("markdown-body", true)
             el.innerHTML = xhr.responseText;
-            if (anchor) window.location.href = "#"+el.id
+            if (window.location.reload.toString().includes("github")) {
+                document.body.querySelectorAll('img')
+                .forEach(i => i.src += window.location.pathname)
+            }
+            if (anchor) window.location.href = "#" + el.id
         }
     };
 
