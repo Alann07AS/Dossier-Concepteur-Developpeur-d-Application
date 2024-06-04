@@ -4,7 +4,6 @@ const md = document.getElementById("md")
 // List of HTML files to load (one at a time or based on some condition)
 const htmlFiles = [
     "Maquetter_une_application",
-    "Développer_une_interface_utilisateur_de_type_desktop",
     "Développer_des_composants_d'accès_aux_données",
     "Développer_la_partie_front-end_d'une_interface_utilisateur_web",
     "Développer_la_partie_back-end_d'une_interface_utilisateur_web",
@@ -27,6 +26,7 @@ htmlFiles.forEach(f=>{
     el.classList.add("file")
     el.onclick = (e)=>{
         loadHTMLContent(f+".html", md)
+        window.location.href = "#list"
     }
     list.appendChild(el)
 })
