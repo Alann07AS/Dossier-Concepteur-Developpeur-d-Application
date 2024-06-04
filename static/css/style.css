@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(245, 245, 245);
@@ -26,19 +27,33 @@ a {
         "title title folders"
         "cards cards name";
     min-height: 100px;
+    max-height: 100vh;
     justify-content: center;
     align-content: center;
     justify-items: center;
     align-items: center;
+    margin: 4px;
+}
+
+@media (max-width: 700px) {
+    .header {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "title title"
+            "folders name"
+            "cards cards";
+    }
 }
 
 /* .container {
     max-height: 100%;
 } */
 
-.folders > a:hover {
-    font-style:oblique;
+.folders>a:hover {
+    font-style: oblique;
 }
+
 .folders {
     grid-area: folders;
     display: flex;
@@ -61,6 +76,7 @@ a {
     grid-area: title;
     font-weight: bolder;
     font-size: x-large;
+    text-align: center;
 }
 
 .card {
@@ -74,7 +90,9 @@ a {
         "logo qr qr";
     justify-items: center;
     align-items: center;
+    height: auto;
     max-height: 200px;
+    max-width: 700px;
     margin: 15px;
     padding: 12px;
 }
@@ -87,6 +105,7 @@ a {
     grid-area: link;
     font-size: x-large;
     font-weight: bolder;
+    transition: 0.4s;
 }
 
 .link:hover {
@@ -125,4 +144,3 @@ a {
 .s_name {
     grid-area: s_name;
 }
-
