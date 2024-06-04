@@ -4,7 +4,8 @@ function loadHTMLContent(file, el, anchor=true) {
     // Create a new XMLHttpRequest object
     var xhr = new XMLHttpRequest();
         // Configure it: GET-request for the URL /static/mdHTML/filename.html
-    xhr.open('GET', '/static/mdHTML/' + file, true);
+
+    xhr.open('GET', window.location.href + 'static/mdHTML/' + file, true);
 
     // Set the callback function
     xhr.onreadystatechange = function () {
