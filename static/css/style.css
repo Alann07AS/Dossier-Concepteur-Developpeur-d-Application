@@ -77,6 +77,7 @@ a {
 }
 
 .header {
+    grid-area: header;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.3fr 1fr;
@@ -144,13 +145,13 @@ a {
 
 .card {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 0.1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-        "link qr qr"
-        "logo qr qr";
+        "link . qr"
+        "logo . qr";
     justify-items: center;
     align-items: center;
     height: auto;
@@ -158,6 +159,11 @@ a {
     max-width: 700px;
     margin: 15px;
     padding: 12px;
+}
+
+.card > * {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .qr {
@@ -181,6 +187,7 @@ a {
 }
 
 .name_grid {
+    grid-area: name;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -220,6 +227,7 @@ a {
 }
 
 #list {
+    grid-area: list;
     top: 100vh;
     /* transform: translateY(-50%); */
     display: flex;
@@ -231,19 +239,40 @@ a {
 }
 
 body {
+    height: 300vh;
     display: grid;
     grid-template-columns: 100vw;
-    grid-template-rows: 100vh 100vh;
+    grid-template-rows: 100vh 100vh 100vh;
     gap: 0px 0px;
-
+    grid-template-areas: 
+      "header"
+      "list" 
+      "md";
+    
     justify-content: center; 
     justify-items: center; 
     align-items: center; 
+    overflow: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 #md {
     width: 98vw;
+    height: 98vh;
     border-radius: 3px;
+    
+}
+
+#md-div {
+    height: 100vh;
+    width: 100vw;
+    /* top: 200vh; */
+    grid-area: md;
+    overflow: scroll;
 }
 
 

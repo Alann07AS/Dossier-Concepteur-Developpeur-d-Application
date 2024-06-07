@@ -25,8 +25,9 @@ htmlFiles.forEach(f=>{
     el.classList.add("buble")
     el.classList.add("file")
     el.onclick = (e)=>{
-        loadHTMLContent(f+".html", md)
-        window.location.href = "#list"
+        loadHTMLContent(f+".html", md, false)
+        ShowMD()
+        // window.location.href = "#list"
     }
     list.appendChild(el)
 })

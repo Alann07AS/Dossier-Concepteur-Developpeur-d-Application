@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="./static/css/github-markdown.css">
     <link rel="stylesheet" href="./static/css/style.css">
     <script src="./static/js/md_loader.js"></script>
-    <script type="module" src="./static/js/list.js"></script>
+    <script defer src="./static/js/scroll.js"></script>
+    <script defer src="./static/js/list.js"></script>
 </head>
 
 <body>
@@ -44,8 +45,10 @@
     <div id="list" class="bg">
         <!-- Sommaire des block avec superposition du header et defilement au mardown -->
     </div>
-    <div id="md">
-        <!-- mardown avec bt retour -->
+    <div id="md-div">
+        <div id="md">
+            <!-- mardown avec bt retour -->
+        </div>
     </div>
 </body>
 
