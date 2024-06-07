@@ -17,9 +17,15 @@ window.addEventListener("wheel", (e) => {
 })
 
 var lastY = 0;
-window.addEventListener("touchmove", (e) => {
-    scroll(e.touches[0].pageY - lastY > 0)
+var to;
+window.addEventListener("touchstart", (e) => {
     lastY = e.touches[0].pageY
+})
+window.addEventListener("touchmove", (e) => {
+    scroll(lastY - e.touches[0].pageY > 40)
+    // lastY = e.touches[0].pageY
+    clearTimeout(to)
+    to = setTimeout(()=>lastY=0, 100)
 })
 
 function ShowMD(b = true) {
